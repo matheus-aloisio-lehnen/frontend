@@ -1,0 +1,143 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+@mixin color-classes($theme) {
+    $type: mat.get-theme-type($theme);
+
+    //Chaves  possiveis de cores
+    // "background, error, error-container, inverse-on-surface, inverse-primary, inverse-surface, on-background, on-error, on-error-container, on-primary,
+    // on-primary-container, on-primary-fixed, on-primary-fixed-variant, on-secondary, on-secondary-container, on-secondary-fixed,
+    // on-secondary-fixed-variant, on-surface, on-surface-variant, on-tertiary, on-tertiary-container, on-tertiary-fixed, on-tertiary-fixed-variant,
+    // outline, outline-variant, primary, primary-container, primary-fixed, primary-fixed-dim, scrim, secondary, secondary-container, secondary-fixed,
+    // secondary-fixed-dim, shadow, surface, surface-bright, surface-container, surface-container-high, surface-container-highest,
+    // surface-container-low, surface-container-lowest, surface-dim, surface-tint, surface-variant, tertiary, tertiary-container, tertiary-fixed,
+    // tertiary-fixed-dim"
+
+
+    $background-body: mat.get-theme-color($theme, background);
+    $text: mat.get-theme-color($theme, inverse-surface);
+
+    $light-primary: mat.get-theme-color($theme, primary-container);
+    $error: mat.get-theme-color($theme, error);
+    $on-error: mat.get-theme-color($theme, on-error);
+    $error-container: mat.get-theme-color($theme, error-container);
+
+
+    $primary: mat.get-theme-color($theme, primary);
+    $secondary: mat.get-theme-color($theme, secondary);
+    $success: mat.get-theme-color($theme, tertiary);
+    $info: map-get(mat.$azure-palette, 30);
+    $warning: mat.get-theme-color($theme, primary);
+    $active: mat.get-theme-color($theme, primary-container);
+    $danger: mat.get-theme-color($theme, error);
+    $gray: mat.get-theme-color($theme, outline);
+    $empty: mat.get-theme-color($theme, outline-variant);
+
+    @if($type == 'dark') {
+        $info: map-get(mat.$azure-palette, 70);
+        $warning: mat.get-theme-color($theme, primary-fixed-dim);
+        $active: mat.get-theme-color($theme, tertiary);
+    }
+
+    .text-primary {
+        color: $primary !important;
+    }
+
+    .text-secondary {
+        color: $secondary !important;
+    }
+
+    .text-success {
+        color: $success !important;
+    }
+
+    .text-info {
+        color: $info !important;
+    }
+
+    .text-warning {
+        color: $warning !important;
+    }
+
+    .text-danger {
+        color: $danger !important;
+    }
+
+    .text-empty {
+        color: $empty;
+    }
+
+    .text-gray {
+        color: $gray;
+    }
+
+    .bg-primary {
+        background-color: $primary !important;
+    }
+
+    .bg-secondary {
+        background-color: $secondary !important;
+    }
+
+    .bg-success {
+        background-color: $success !important;
+    }
+
+    .bg-info {
+        background-color: $info !important;
+    }
+
+    .bg-warning {
+        background-color: $warning !important;
+    }
+
+    .bg-danger {
+        background-color: $danger !important;
+    }
+
+    .bg-empty {
+        background-color: $empty !important;
+    }
+
+    .bg-gray {
+        background-color: $gray;
+    }
+
+    .hover:hover {
+        background: $empty;
+        transition: 0.1s;
+    }
+
+    .active {
+        background-color: $active !important;
+    }
+
+    .disabled {
+        opacity: 0.4;
+    }
+
+    .snackbar-success {
+        @if($type == 'dark') {
+            --mdc-snackbar-container-color: #58dbc3 !important;
+        } @else {
+            --mdc-snackbar-container-color: #006c45 !important;
+        }
+    }
+
+    .snackbar-warning {
+        @if($type == 'dark') {
+            --mdc-snackbar-container-color: #ffb74d !important;
+        } @else {
+            --mdc-snackbar-container-color: #f57c00 !important;
+        }
+    }
+
+    .snackbar-error {
+        @if($type == 'dark') {
+            --mdc-snackbar-container-color: #ff5449 !important;
+        } @else {
+            --mdc-snackbar-container-color: #ba1a1a !important;
+        }
+    }
+
+}

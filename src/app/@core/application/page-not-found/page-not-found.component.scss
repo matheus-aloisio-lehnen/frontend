@@ -1,0 +1,13 @@
+@use '../auth/auth.component';
+
+.container-card .mat-mdc-card-content {
+    h3 {
+        text-align: center;
+        animation: slideInLeft 1s ease-in-out;
+    }
+
+    p {
+        text-align: center;
+        animation: slideInRight 1s ease-in-out;
+    }
+}

@@ -1,0 +1,31 @@
+<ng-container *ngrxLet="isDarkMode$ as darkMode">
+    <mat-card class="container-card">
+        <div class="card-top">
+            <div>
+                @if (!signInRoute) {
+                    <a mat-button [routerLink]="'../'" [class.text-primary]="darkMode" [class.text-success]="!darkMode">
+                        <mat-icon> arrow_back</mat-icon>
+                        Voltar
+                    </a>
+                }
+            </div>
+            <div>
+                <button mat-icon-button [class.text-primary]="darkMode" [class.text-info]="!darkMode"
+                        (click)="changeThemeMode(darkMode)">
+                    <mat-icon> {{ darkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+                </button>
+            </div>
+
+
+        </div>
+        <mat-card-header>
+            <img mat-card-image [ngSrc]="'../../assets/logo/logo.png'" [alt]="'Brand Logo'" [width]="100" [height]="100"
+                 priority>
+            <mat-card-title>
+                <h1 class="brand">Brand name</h1>
+            </mat-card-title>
+        </mat-card-header>
+        <router-outlet></router-outlet>
+    </mat-card>
+</ng-container>
+

@@ -1,0 +1,156 @@
+@mixin icon-size() {
+
+    .i-4xs {
+        font-size: .25rem;
+        height: .25rem;
+        width: .25rem;
+    }
+
+    .i-3xs {
+        font-size: .5rem;
+        height: .5rem;
+        width: .5rem;
+    }
+
+    .i-2xs {
+        font-size: .75rem;
+        height: .75rem;
+        width: .75rem;
+    }
+
+    .i-xs {
+        font-size: 1rem;
+        height: 1rem;
+        width: 1rem;
+    }
+
+    .i-sm {
+        font-size: 1.25rem;
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+
+    .i-md {
+        font-size: 1.5rem;
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    .i-lg {
+        font-size: 1.75rem;
+        height: 1.75rem;
+        width: 1.75rem;
+    }
+
+    .i-xl {
+        font-size: 2rem;
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .i-2xl {
+        font-size: 2.5rem;
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    .i-3xl {
+        font-size: 3rem;
+        height: 3rem;
+        width: 3rem;
+    }
+
+    .i-4xl {
+        font-size: 3.5rem;
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+
+
+    .svg-2xs {
+        svg {
+            width: var(--mdc-icon-button-icon-size, 0.75rem);
+            height: var(--mdc-icon-button-icon-size, 0.75rem);
+
+        }
+    }
+
+    .svg-xs {
+        svg {
+            width: var(--mdc-icon-button-icon-size, 1rem);
+            height: var(--mdc-icon-button-icon-size, 1rem);
+        }
+    }
+
+    .svg-sm {
+        svg {
+            width: var(--mdc-icon-button-icon-size, 1.25rem);
+            height: var(--mdc-icon-button-icon-size, 1.25rem);
+        }
+    }
+
+    .svg-md {
+        svg {
+            width: var(--mdc-icon-button-icon-size, 1.5rem);
+            height: var(--mdc-icon-button-icon-size, 1.5rem);
+        }
+    }
+
+    .svg-lg {
+        svg {
+            width: var(--mdc-icon-button-icon-size, 1.75rem);
+            height: var(--mdc-icon-button-icon-size, 1.75rem);
+        }
+    }
+
+    .svg-xl {
+        svg {
+            width: var(--mdc-icon-button-icon-size, 2rem);
+            height: var(--mdc-icon-button-icon-size, 2rem);
+        }
+    }
+
+    .svg-2xl {
+        svg {
+            width: var(--mdc-icon-button-icon-size, 2.5rem);
+            height: var(--mdc-icon-button-icon-size, 2.5rem);
+        }
+    }
+
+    .svg-3xl {
+        svg {
+            width: var(--mdc-icon-button-icon-size, 3rem);
+            height: var(--mdc-icon-button-icon-size, 3rem);
+        }
+    }
+
+    .svg-4xl {
+        svg {
+            width: var(--mdc-icon-button-icon-size, 3.5rem);
+            height: var(--mdc-icon-button-icon-size, 3.5rem);
+        }
+    }
+
+    .svg-5xl {
+        svg {
+            width: var(--mdc-icon-button-icon-size, 4.5rem);
+            height: var(--mdc-icon-button-icon-size, 4.5rem);
+        }
+    }
+
+    .svg-6xl {
+        svg {
+            width: var(--mdc-icon-button-icon-size, 5.5rem);
+            height: var(--mdc-icon-button-icon-size, 5.5rem);
+        }
+    }
+
+    .svg-7xl {
+        svg {
+            width: var(--mdc-icon-button-icon-size, 6.5rem);
+            height: var(--mdc-icon-button-icon-size, 6.5rem);
+        }
+    }
+
+}

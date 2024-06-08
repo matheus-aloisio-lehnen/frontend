@@ -1,0 +1,56 @@
+@use '@angular/material' as mat;
+@use 'theme/light';
+@use 'theme/dark';
+@use 'theme/mixins/utils';
+@include mat.core();
+
+html,
+body {
+    height: 100%;
+    --ion-font-family: 'Varela Round';
+}
+
+body {
+    margin: 0;
+}
+
+html {
+    --mdc-outlined-card-container-shape: 2rem !important;
+    --mdc-elevated-card-container-shape: 2rem !important;
+    --mat-stepper-header-hover-state-layer-shape: 2rem !important;
+    --mat-stepper-header-focus-state-layer-shape: 2rem !important;
+
+    .brand {
+        font-family: 'Pacifico', sans-serif;
+        @extend .text-success;
+    }
+
+    @include mat.card-theme(light.$theme);
+    @include mat.button-theme(light.$theme);
+    @include mat.icon-button-theme(light.$theme);
+    @include mat.form-field-theme(light.$theme);
+    @include mat.divider-theme(light.$theme);
+    @include mat.stepper-theme(light.$theme);
+    @include mat.radio-theme(light.$theme);
+    @include mat.dialog-theme(light.$theme);
+    @include mat.progress-spinner-theme(light.$theme);
+    @include mat.progress-bar-theme(light.$theme);
+    @include mat.snack-bar-theme(light.$theme);
+    @include utils.mixins(light.$theme);
+
+}
+
+.dark-theme {
+    @include mat.card-color(dark.$theme);
+    @include mat.button-color(dark.$theme);
+    @include mat.icon-button-color(dark.$theme);
+    @include mat.form-field-color(dark.$theme);
+    @include mat.divider-color(dark.$theme);
+    @include mat.stepper-color(dark.$theme);
+    @include mat.radio-color(dark.$theme);
+    @include mat.dialog-color(dark.$theme);
+    @include mat.progress-spinner-color(dark.$theme);
+    @include mat.progress-bar-color(dark.$theme);
+    @include mat.snack-bar-color(dark.$theme);
+    @include utils.mixins(dark.$theme);
+}

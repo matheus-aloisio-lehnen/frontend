@@ -1,0 +1,19 @@
+@import "animations";
+@import "color-classes";
+@import "dialog";
+@import "form-field";
+@import "helpers";
+@import "icon-size";
+@import "selectable-icon";
+@import "square-btn";
+
+@mixin mixins($theme) {
+    @include animations($theme);
+    @include color-classes($theme);
+    @include dialog($theme);
+    @include form-field($theme);
+    @include helpers();
+    @include icon-size();
+    @include selectable-icon($theme);
+    @include square-button($theme);
+}

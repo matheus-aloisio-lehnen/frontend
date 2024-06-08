@@ -1,0 +1,42 @@
+@use '@angular/material' as mat;
+
+@mixin selectable-icon($theme) {
+
+    $type: mat.get-theme-type($theme);
+    $empty: mat.get-theme-color($theme, inverse-on-surface);
+    $gray: mat.get-theme-color($theme, outline);
+    $empty: mat.get-theme-color($theme, outline-variant);
+    $primary: mat.get-theme-color($theme, primary);
+    $success: mat.get-theme-color($theme, tertiary);
+
+    .i-selectable {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 11rem;
+        height: 11rem;
+        border-radius: 2rem;
+        margin: 0.5rem;
+        color: $empty;
+        cursor: pointer;
+        .mat-icon {
+            width: 6rem;
+            height: 6rem;
+            margin: 0;
+        }
+    }
+
+    .i-selectable-active,
+    .i-selectable:hover {
+        h4,
+        .mat-icon {
+            @if(type == 'dark') {
+                color: $success;
+            } @else {
+                color: $primary;
+            }
+        }
+    }
+
+}

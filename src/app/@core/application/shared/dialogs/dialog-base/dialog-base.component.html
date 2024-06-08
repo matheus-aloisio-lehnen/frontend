@@ -1,0 +1,30 @@
+<mat-toolbar class="dialog-title" >
+    <h2 mat-dialog-title> {{ data.title }} </h2>
+    <button mat-icon-button
+            [mat-dialog-close]="false">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-divider></mat-divider>
+<mat-dialog-content [innerHTML]="data.content"></mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions>
+    @for(action of data.actions; let last = $last; track action; ) {
+        @if(!last) {
+            <button mat-button
+                    [class]="action.class"
+                    [mat-dialog-close]="false"
+                    (click)="action.action()">
+                {{ action.label }}
+            </button>
+        } @else {
+            <button mat-flat-button
+                    [class]="action.class"
+                    [mat-dialog-close]="true"
+                    (click)="action.action()">
+                {{ action.label }}
+            </button>
+        }
+    }
+</mat-dialog-actions>

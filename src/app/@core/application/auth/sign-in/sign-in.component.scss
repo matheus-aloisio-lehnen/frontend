@@ -1,0 +1,35 @@
+.sign-in-content {
+    margin: 1.5rem 2rem;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1.5rem;
+
+        .mat-mdc-form-field {
+            margin: .5rem 0;
+        }
+    }
+}
+
+.sign-in-divider {
+    margin: 2rem 4rem;
+}
+
+.sign-in-actions {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem;
+
+    button,
+    a {
+        width: 100%;
+        margin: .5rem 0;
+    }
+}
+
+.sign-in-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

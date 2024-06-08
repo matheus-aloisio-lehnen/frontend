@@ -1,0 +1,58 @@
+@use '@angular/material' as mat;
+
+@mixin form-field ($theme) {
+
+    $gray: mat.get-theme-color($theme, outline);
+    $danger: mat.get-theme-color($theme, error);
+    $primary: mat.get-theme-color($theme, primary);
+    .mdc-text-field--outlined {
+        --mdc-outlined-text-field-container-shape: 2rem !important;
+    }
+
+    .mdc-text-field--filled {
+        border-radius: 2rem;
+    }
+
+    .mat-mdc-form-field-has-icon-prefix .mat-mdc-text-field-wrapper {
+        --mat-mdc-form-field-label-offset-x: unset;
+    }
+
+    .mat-mdc-form-field-icon-suffix {
+        margin-right: 0.5rem;
+    }
+
+    .mdc-text-field--invalid {
+        animation: error-smoke 1s ease-in-out;
+        border-radius: 2rem !important;
+    }
+
+    .radio-group-fieldset {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem auto;
+        width: 100%;
+        justify-content: center;
+        border: none;
+        background-color: var(--mdc-filled-text-field-container-color);
+        border-radius: 2rem;
+        font-size: 0.7rem;
+        @extend .text-gray;
+        .btn-box {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    .mat-error {
+        @extend .text-danger;
+        margin-left: .5rem;
+    }
+
+    .mat-error-box {
+        border: 1px solid $danger !important;
+        border-radius: 2rem;
+        animation: error-smoke 1s ease-in-out !important;
+    }
+
+}

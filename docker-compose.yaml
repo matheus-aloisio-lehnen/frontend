@@ -1,0 +1,16 @@
+services:
+    frontend:
+        container_name: frontend
+        tty: true
+        build:
+            dockerfile: Dockerfile
+            target: dev
+        ports:
+            - '4200:4200'
+        volumes:
+            - .:/usr/src/app
+        networks:
+            - internal
+networks:
+    internal:
+        driver: bridge

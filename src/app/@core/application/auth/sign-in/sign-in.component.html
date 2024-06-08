@@ -1,0 +1,34 @@
+<mat-card-content class="sign-in-content">
+    <h4>Login</h4>
+    <form [formGroup]="form" (keydown.enter)="$event.preventDefault(); signIn()">
+        <mat-form-field>
+            <mat-icon matIconPrefix class="text-success">mail</mat-icon>
+            <mat-label>Email</mat-label>
+            <input matInput [formControlName]="'email'" type="email">
+            @if(email?.invalid) {
+                <mat-error> {{ getFormErrorMessage(email)}}</mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Senha</mat-label>
+            <mat-icon matIconPrefix class="text-success">lock</mat-icon>
+            <input matInput [formControlName]="'password'" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matIconSuffix (click)="hide = !hide">
+                <mat-icon class="text-success">visibility{{ hide ? '' : '_off' }}</mat-icon>
+            </button>
+            @if(password?.invalid) {
+                <mat-error> {{ getFormErrorMessage(password)}}</mat-error>
+            }
+        </mat-form-field>
+    </form>
+</mat-card-content>
+<mat-card-actions class="sign-in-actions">
+    <button mat-flat-button (click)="signIn()"> Entrar</button>
+    <a mat-button [routerLink]="['../', RouteList.forgotPassword]"> Esqueci a senha </a>
+</mat-card-actions>
+
+<mat-divider class="sign-in-divider"></mat-divider>
+<mat-card-footer class="sign-in-footer">
+    <p>Não é um membro?</p>
+    <a mat-button [routerLink]="['../', RouteList.signUp]">Crie uma conta</a>
+</mat-card-footer>

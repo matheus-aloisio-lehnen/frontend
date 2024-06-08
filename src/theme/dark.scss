@@ -1,0 +1,161 @@
+@use 'sass:map';
+@use '../../node_modules/@angular/material/index' as mat;
+
+$typography: (
+    plain-family: 'Varela Round, sans serif',
+    brand-family: 'Varela Round, sans serif',
+    bold-weight: 900,
+    medium-weight: 400,
+    regular-weight: 200,
+);
+$density: (scale: -1);
+
+$_palettes: (
+    primary: (
+        0: #000000,
+        10: #0b2000,
+        20: #173800,
+        25: #1e4400,
+        30: #255101,
+        35: #315d0f,
+        40: #3d691b,
+        50: #548332,
+        60: #6d9e49,
+        70: #87b961,
+        80: #a1d579,
+        90: #bcf293,
+        95: #cfffa8,
+        98: #eeffdc,
+        99: #f8ffeb,
+        100: #ffffff,
+    ),
+    secondary: (
+        0: #000000,
+        10: #00201a,
+        20: #00382e,
+        25: #004438,
+        30: #005143,
+        35: #005e4e,
+        40: #006b5a,
+        50: #008771,
+        60: #00a38a,
+        70: #38bfa4,
+        80: #5bdbbf,
+        90: #7af8db,
+        95: #b7ffeb,
+        98: #e6fff6,
+        99: #f3fff9,
+        100: #ffffff,
+    ),
+    tertiary: (
+        0: #000000,
+        10: #00201b,
+        20: #00382f,
+        25: #00443a,
+        30: #005045,
+        35: #005d50,
+        40: #006b5c,
+        50: #008674,
+        60: #00a38d,
+        70: #33bfa8,
+        80: #58dbc3,
+        90: #77f8df,
+        95: #b6ffed,
+        98: #e5fff7,
+        99: #f3fffa,
+        100: #ffffff,
+    ),
+    neutral: (
+        0: #000000,
+        10: #00201a,
+        20: #00382e,
+        25: #004438,
+        30: #005143,
+        35: #005e4e,
+        40: #006b5a,
+        50: #008771,
+        60: #00a38a,
+        70: #38bfa4,
+        80: #5bdbbf,
+        90: #7af8db,
+        95: #b7ffeb,
+        98: #e6fff6,
+        99: #f3fff9,
+        100: #ffffff,
+    ),
+    neutral-variant: (
+        0: #000000,
+        10: #181d14,
+        20: #2d3228,
+        25: #383d33,
+        30: #44483e,
+        35: #4f5449,
+        40: #5b6055,
+        50: #74796d,
+        60: #8e9286,
+        70: #a8ada0,
+        80: #c4c8bb,
+        90: #e0e4d6,
+        95: #eef2e4,
+        98: #f7fbec,
+        99: #fafeef,
+        100: #ffffff,
+    ),
+    error: (
+        0: #000000,
+        10: #410002,
+        20: #690005,
+        25: #7e0007,
+        30: #93000a,
+        35: #a80710,
+        40: #ba1a1a,
+        50: #de3730,
+        60: #ff5449,
+        70: #ff897d,
+        80: #ffb4ab,
+        90: #ffdad6,
+        95: #ffedea,
+        98: #fff8f7,
+        99: #fffbff,
+        100: #ffffff,
+    ),
+);
+
+$_rest: (
+    secondary: map.get($_palettes, secondary),
+    neutral: map.get($_palettes, neutral),
+    neutral-variant: map.get($_palettes, neutral-variant),
+    error: map.get($_palettes, error),
+);
+$_primary: map.merge(map.get($_palettes, primary), $_rest);
+$_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
+
+$dark-theme: mat.define-theme((
+    color: (
+        theme-type: dark,
+        primary: $_primary,
+        tertiary: $_tertiary,
+    ),
+));
+
+
+$_rest: (
+    secondary: map.get($_palettes, secondary),
+    neutral: map.get($_palettes, neutral),
+    neutral-variant: map.get($_palettes, neutral-variant),
+    error: map.get($_palettes, error),
+);
+
+$_primary: map.merge(map.get($_palettes, primary), $_rest);
+$_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
+
+$theme: mat.define-theme((
+    color: (
+        theme-type: dark,
+        primary: $_primary,
+        tertiary: $_tertiary,
+    ),
+    typography: $typography,
+    density: $density
+));
+

@@ -1,0 +1,61 @@
+@use '../../../node_modules/@angular/material/index' as mat;
+
+@mixin animations($theme) {
+    @keyframes bounce {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-0.5rem);
+        }
+    }
+
+    @keyframes slideInLeft {
+        0% {
+            transform: translateX(-6rem);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInRight {
+        0% {
+            transform: translateX(6rem);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes success-smoke {
+        0% {
+            box-shadow: 0 0 0 0 map-get(mat.$green-palette, 50);
+        }
+        40% {
+            box-shadow: 0 0 1rem 0.25rem map-get(mat.$green-palette, 50);
+        }
+    }
+
+    @keyframes error-smoke {
+        0% {
+            box-shadow: 0 0 0 0 map-get(mat.$red-palette, 50);
+        }
+        40% {
+            box-shadow: 0 0 1rem 0.25rem map-get(mat.$red-palette, 60);
+        }
+    }
+}

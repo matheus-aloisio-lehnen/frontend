@@ -1,0 +1,42 @@
+.container-role {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-up-content {
+    margin: 1.5rem 0 !important;
+    form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1.5rem;
+
+        .mat-mdc-form-field {
+            margin: .5rem 0;
+        }
+    }
+    h4 {
+        text-align: center;
+    }
+    .mat-divider {
+        margin: 5rem 2rem;
+    }
+    .mat-mdc-progress-spinner {
+        margin: 2rem auto;
+    }
+}
+
+.sign-up-actions {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem;
+
+    button,
+    a {
+        width: 100%;
+        margin: .5rem 0;
+    }
+}
+
