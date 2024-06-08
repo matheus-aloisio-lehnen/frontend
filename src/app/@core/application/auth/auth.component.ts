@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from "rxjs";
 import { Store } from "@ngrx/store";
-import { ActivatedRoute, Router, RouterLink, RouterOutlet } from "@angular/router";
-import { IonicModule } from "@ionic/angular";
+import { Router, RouterLink, RouterOutlet } from "@angular/router";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
@@ -16,7 +15,6 @@ import { AppState } from "../../infra/store/ngrx/state/app.state";
 import { BaseComponent } from "../shared/base/base.component";
 import { Loading } from "../../domain/enum/loading.enum";
 import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
-import { RouteList } from "../../domain/enum/route-list.enum";
 
 @Component({
     selector: 'app-auth',
@@ -25,7 +23,6 @@ import { RouteList } from "../../domain/enum/route-list.enum";
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [
-        IonicModule,
         MatCardModule,
         MatButtonModule,
         MatIconModule,

@@ -1,11 +1,11 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Router } from "@angular/router";
+import { Store } from "@ngrx/store";
 
 import { SignInDto } from "../../../domain/dto/auth/sign-in/sign-in.dto";
 import { CreateUserDto } from "../../../domain/dto/user/create/create-user.dto";
 import { HttpService } from "../../../infra/services/http/http.service";
 import { LocalStorage } from "../../../infra/store/storage/local/local.storage";
-import { Router } from "@angular/router";
-import { Store } from "@ngrx/store";
 import { ChangePasswordDto } from "../../../domain/dto/auth/reset-password/change-password.dto";
 import { Observable, of, switchMap, tap } from "rxjs";
 import { Result } from "../../../domain/type/result.type";
@@ -39,7 +39,7 @@ export class AuthService {
 
         this.localStorage.set(StorageKeys.auth, auth);
         this.store.dispatch(setUser({ user: user }));
-        const to = [ `${RouteList.user}/${RouteList[user.role]}` ]
+        const to = [ `${RouteList.user}}` ]
         await this.router.navigate(to);
     }
 
@@ -85,7 +85,7 @@ export class AuthService {
 
 
     logout() {
-        console.log('logout colocar')
+        // TODO To implement...
     }
 
     isTokenValid() {
